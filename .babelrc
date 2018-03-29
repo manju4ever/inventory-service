@@ -1,0 +1,13 @@
+{
+  "presets": ["env"],
+  "plugins": [
+    "transform-object-rest-spread",
+    [
+      "resolver",
+      {
+        "root": "./",
+        "resolveDirs": [ "src", "src/controllers", "src/controllers", "src/utils", "src/schemas"]
+      }
+    ]
+  ]
+}

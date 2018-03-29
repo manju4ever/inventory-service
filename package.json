@@ -1,0 +1,45 @@
+{
+  "name": "hapi-fullbown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "$(npm bin)/babel src/ -d dist/",
+    "watch": "$(npm bin)/nodemon -w src/ src/bootstrap.js",
+    "deploy:pm2": "pm2 -i 2 start dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manju4ever/hapi-es6-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manju4ever/hapi-es6-starter/issues"
+  },
+  "homepage": "https://github.com/manju4ever/hapi-es6-starter#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "config": "^1.30.0",
+    "hapi": "^17.2.1",
+    "hapi-bunyan": "^0.7.0",
+    "inert": "^5.1.0",
+    "joi": "^13.1.2",
+    "mongodb": "^3.0.4",
+    "nes": "^7.0.3",
+    "redis": "^2.8.0",
+    "vision": "^5.3.1",
+    "ws": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-resolver": "^1.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "hapi-swagger": "^9.1.1",
+    "nodemon": "^1.17.1"
+  }
+}
