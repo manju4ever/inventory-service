@@ -7,6 +7,7 @@ import Inert from "inert";
 import Vision from "vision";
 import HapiSwagger from "hapi-swagger";
 import bluebird from "bluebird";
+import HapiAuthCookie from "hapi-auth-cookie";
 
 import SwaggerOptions from "utils/SwaggerOptions";
 import Routes from "routes";
@@ -18,7 +19,9 @@ bluebird.promisifyAll(Redis.Multi.prototype);
 const server = new Hapi.Server({
     host: config.get('app.connection.host'),
     port: config.get('app.connection.port'),
+    routes: config.get('app.connection.routes'),
 });
+
 
 server.ext([
     {
@@ -57,11 +60,18 @@ server.register([
         plugin: HapiSwagger,
         options: SwaggerOptions,
     },
+    HapiAuthCookie,
 ]).then(() => {
     /*
        Initialize server - Make sure plugins, caches and other things
                            are ready before listening to requests
     */
+   server.auth.strategy('session', 'cookie', {
+       password: '980das9809d8asd098dsa098dsadsa09asd8089ads',
+       isSecure: false,
+       isSameSite: 'Lax'
+   });
+   server.auth.default('session');
     return server.initialize();
 }).then(() => {
     Routes.forEach(route => server.route(route));

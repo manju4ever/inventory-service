@@ -3,7 +3,14 @@
         "name": "hapi-fullblown",
         "connection":{
             "host": "localhost",
-            "port": "8080"
+            "port": "8080",
+            "routes": {
+                "cors": {
+                    "origin": ["*"],
+                    "headers": ["Authorization", "Content-Type", "If-None-Match", "x-requested-with", "x-forwarded-for"],
+                    "credentials": true
+                }
+            }
         }
     },
     "db": {

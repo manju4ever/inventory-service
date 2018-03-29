@@ -23,6 +23,7 @@
     "bluebird": "^3.5.1",
     "config": "^1.30.0",
     "hapi": "^17.2.1",
+    "hapi-auth-cookie": "^8.1.0",
     "hapi-bunyan": "^0.7.0",
     "inert": "^5.1.0",
     "joi": "^13.1.2",
