@@ -1,4 +1,4 @@
-## A full blown Hapi.js Fullblown Starter Template
+## A full blown Hapi.js Starter Template
 #### This template comes with ES6 Support using Babel & Websocket, Mongo & Redis boilerplate.
 
 ### Development Usage
@@ -9,7 +9,7 @@
 
 2. Run Redis and Mongo together using dock-compose tool
 
-    `$docker-compose up -d`
+    `$ docker-compose up -d`
 
 4. Double check configuration settigns at `config/default.json`
 
