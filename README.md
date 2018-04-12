@@ -1,5 +1,5 @@
 ## A full blown Hapi.js Starter Template
-#### This template comes with ES6 Support using Babel & Websocket, Mongo & Redis boilerplate.
+#### This template comes with ES6 Support (Babel), Websocket, Mongo & Redis boilerplate.
 
 ### Development Usage
 
