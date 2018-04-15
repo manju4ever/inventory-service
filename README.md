@@ -11,6 +11,6 @@
 
     `$ docker-compose up -d`
 
-4. Double check configuration settigns at `config/default.json`
+4. Double check configuration settings at `config/default.json`
 
 5. Finally run `$ npm run watch` and Tada You've got youeself a server running on **8080** (you can change this to whatever port you want)
