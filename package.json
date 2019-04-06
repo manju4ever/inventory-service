@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "$(npm bin)/babel src/ -d dist/",
-    "watch": "$(npm bin)/nodemon -w src/ src/bootstrap.js",
+    "build": "npx babel-cli src/ -o dist/",
+    "watch": "npx nodemon ENABLE_MONGO=N ENABLE_REDIS=N -w src/ src/bootstrap.js",
     "deploy:pm2": "pm2 -i 2 start dist/index.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "hapi": "^17.2.1",
     "hapi-auth-cookie": "^8.1.0",
     "hapi-bunyan": "^0.7.0",
+    "hapi-swagger": "^9.4.2",
     "inert": "^5.1.0",
     "joi": "^13.1.2",
     "mongodb": "^3.0.4",
@@ -35,12 +36,16 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-plugin-resolver": "^1.1.0",
+    "babel-core": "^6.18.0",
+    "babel-plugin-module-resolver": "^3.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "hapi-swagger": "^9.1.1",
-    "nodemon": "^1.17.1"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9"
   }
 }

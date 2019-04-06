@@ -3,11 +3,16 @@
   "plugins": [
     "transform-object-rest-spread",
     [
-      "resolver",
+      "module-resolver",
       {
-        "root": "./",
-        "resolveDirs": [ "src", "src/controllers", "src/controllers", "src/utils", "src/schemas"]
+        "alias": {
+          "~": "./src"
+        }
       }
-    ]
+    ],
+    "transform-regenerator"   
+  ],
+  "ignore": [
+    "src/bootstrap.js"
   ]
 }

@@ -1,0 +1,26 @@
+{
+    "extends": ["airbnb-base"],
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "strict": 0,
+      "no-underscore-dangle": 0,
+      "global-require": 0,
+      "max-len": ["error", 140],
+      "no-plusplus": 0,
+      "import/no-unresolved": 0,
+      "prop-types": [0],
+      "import/extensions": 0,
+      "camelcase": 0,
+      "class-methods-use-this": 0,
+      "linebreak-style": 0,
+      "no-extra-boolean-cast": 0
+    },
+    "env": {
+      "jest": true
+    },
+    "globals": {
+      "logger": true
+    }
+}   
