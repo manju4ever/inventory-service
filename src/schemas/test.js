@@ -1,5 +1,5 @@
-import Joi from "joi";
+import Joi from 'joi';
 
 export default Joi.object().keys({
-   name: Joi.string().required().description(`Some name would do good`)
+  name: Joi.string().required().description('Some name would do good'),
 });
