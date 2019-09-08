@@ -1,4 +1,4 @@
-{
+module.exports = {
     "app": {
         "name": "hapi-fullblown",
         "connection":{
@@ -24,4 +24,4 @@
             "port": "6379"
         }
     }
-}
+};

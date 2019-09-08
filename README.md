@@ -13,4 +13,4 @@
 
 4. Double check configuration settings at `config/default.json`
 
-5. Finally run `$ npm run watch` and Tada You've got youeself a server running on **8080** (you can change this to whatever port you want)
+5. Finally run `$ npm run start` and Tada You've got youeself a server running on **8080** (you can change this to whatever port you want)
