@@ -1,4 +1,4 @@
-require('./server');
+require('./src/server');
 
 // Catch Unhandled Rejections Globally
 process.on('unhandledRejection', (reason, p) => {
