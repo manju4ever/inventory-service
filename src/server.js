@@ -2,8 +2,10 @@ import path from 'path';
 import config from 'config';
 import Hapi from '@hapi/hapi';
 import Inert from '@hapi/inert';
+import Vision from '@hapi/vision';
 import HapiAuthCookie from '@hapi/cookie';
 import HapiDocs from '@surveylegend/hapi-docs';
+import HapiSwagger from 'hapi-swagger';
 import { MongoClient, Server as MongoServer } from 'mongodb';
 import Redis from 'redis';
 import bluebird from 'bluebird';
@@ -11,8 +13,8 @@ import bluebird from 'bluebird';
 import logger from '~/utils/logger';
 import Routes from '~/routes';
 import HapiDocsOptions from '~/utils/HapiDocsOptions';
+import HapiSwaggerOptions from '~/utils/HapiSwaggerOptions';
 import { getEnvValue } from '~/utils';
-
 // Promisify all redis functions using bluebird - Future is already here :)
 bluebird.promisifyAll(Redis.RedisClient.prototype);
 bluebird.promisifyAll(Redis.Multi.prototype);
@@ -64,10 +66,14 @@ server.ext([
 
 server.register([
   Inert,
+  Vision,
   HapiAuthCookie,
   {
     plugin: HapiDocs,
     options: HapiDocsOptions,
+  }, {
+    plugin: HapiSwagger,
+    options: HapiSwaggerOptions,
   }
 ]).then(() => {
   /**
