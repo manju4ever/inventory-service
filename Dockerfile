@@ -1,6 +1,6 @@
-FROM node:9.8.0-slim
+FROM node:10.15.1-slim
 
-WORKDIR /usr/src/morpheus
+WORKDIR /usr/src
 
 COPY . .
 
