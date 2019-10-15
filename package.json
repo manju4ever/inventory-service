@@ -1,25 +1,25 @@
 {
-  "name": "hapi-es6-starter",
+  "name": "inventory-service",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "npx nodemon --exec babel-node index.js",
     "deploy": "babel-node index.js",
-    "restart": "git pull && npm i && npm run build && npm run deploy:prod",
-    "restart:quick": "git pull && npm run buid && npm run deploy:prod"
+    "restart": "git pull && npm i && npm run build && npm run deploy",
+    "restart:quick": "git pull && npm run buid && npm run deploy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manju4ever/hapi-es6-starter.git"
+    "url": "git+https://github.com/manju4ever/inventory-service.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/manju4ever/hapi-es6-starter/issues"
+    "url": "https://github.com/manju4ever/inventory-service/issues"
   },
-  "homepage": "https://github.com/manju4ever/hapi-es6-starter#readme",
+  "homepage": "https://github.com/manju4ever/inventory-service#readme",
   "dependencies": {
     "@hapi/cookie": "^10.1.2",
     "@hapi/hapi": "^18.4.0",
