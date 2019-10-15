@@ -1,13 +1,15 @@
+import config from 'config';
+
 export default {
   basePath: '/',
   info: {
-    title: 'hapi-es6-starter',
-    description: 'A Full Blown Starter Template',
+    title: config.get('app.name'),
+    description: config.get('app.description'),
     version: '1.0.0',
     contact: {
       name: 'Manjunath Desappa',
       url: 'http://github.com/manju4ever',
-      email: 'manjunath.desapppa@outlook.com',
+      email: 'dmanjunath@live.com',
     },
     license: {
       name: 'UNLICENSED',

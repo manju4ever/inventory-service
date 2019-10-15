@@ -1,27 +1,18 @@
-import TestRoutes from './test-route';
+import ProductRoutes from './products-route';
 
 const IndexRoute = {
   path: '/',
   method: 'GET',
   config: {
-    description: "This route is the root of all beautiful things yet to happen",
+    description: "This is an entrypoint to beauty.",
     tags: ["api"],
   },
-  handler: async (request, h) => h.response({ message: 'Welcome to Hapi.js Test Server' }),
-};
-
-
-const Private = {
-  path: '/login',
-  method: 'POST',
-  handler: async (request, h) => {
-    request.cookieAuth.set({ sid: 20 });
-    return h.response({ message: 'okay' });
-  },
+  handler: async (request, h) => h
+    .response({ message: `Hey there buddy, i'm a simple inventory service. I speak HTTP !` })
+    .header('Content-Type', 'application/json'),
 };
 
 export default [
   IndexRoute,
-  Private,
-  ...TestRoutes,
+  ...ProductRoutes,
 ];

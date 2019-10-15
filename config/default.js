@@ -1,6 +1,7 @@
 module.exports = {
     "app": {
-        "name": "hapi-starter",
+        "name": "inventory-service",
+        "description": "A simple inventory service",
         "connection":{
             "host": "localhost",
             "port": "8080",

@@ -1,6 +1,5 @@
 module.exports = {
     "app": {
-        "name": "hapi-starter",
         "connection":{
             "host": "localhost",
             "port": "8080",
