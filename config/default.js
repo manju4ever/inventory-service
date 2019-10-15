@@ -27,13 +27,6 @@ module.exports = {
     authentication: {
         "jwt": {
             secret: "SneakyPeeky1234#", // maintain absolute secrecy on this
-            options: {
-               verifyOptions: {
-                algorithms: ['HS256'],
-                ignoreExpiration: false,
-                issuer: "Hapi-Starter", // issuer name - app related
-               }
-            }
         },
     },
 };

@@ -1,3 +1,4 @@
+require('dotenv');
 require('./src/server');
 
 // Catch Unhandled Rejections Globally

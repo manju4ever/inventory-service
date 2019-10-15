@@ -4,6 +4,7 @@ import Hapi from '@hapi/hapi';
 import Inert from '@hapi/inert';
 import Vision from '@hapi/vision';
 import HapiAuthCookie from '@hapi/cookie';
+import HapiJWTAuth from 'hapi-auth-jwt2';
 import HapiDocs from '@surveylegend/hapi-docs';
 import HapiSwagger from 'hapi-swagger';
 import { MongoClient, Server as MongoServer } from 'mongodb';
@@ -14,7 +15,9 @@ import logger from '~/utils/logger';
 import Routes from '~/routes';
 import HapiDocsOptions from '~/utils/HapiDocsOptions';
 import HapiSwaggerOptions from '~/utils/HapiSwaggerOptions';
+import { validateCookie, validateTokenJWT } from '~/security';
 import { getEnvValue } from '~/utils';
+
 // Promisify all redis functions using bluebird - Future is already here :)
 bluebird.promisifyAll(Redis.RedisClient.prototype);
 bluebird.promisifyAll(Redis.Multi.prototype);
@@ -74,6 +77,8 @@ server.register([
   }, {
     plugin: HapiSwagger,
     options: HapiSwaggerOptions,
+  }, {
+    plugin: HapiJWTAuth,
   }
 ]).then(() => {
   /**
@@ -86,15 +91,14 @@ server.register([
       isSecure: false,
       isSameSite: 'Lax',
     },
-    validateFunc: (request, session) => {
-      return  {
-        valid: true,
-        credentials: {
-          username: "test",
-        }
-      }
-    }
+    validateFunc: validateCookie,
   });
+
+  server.auth.strategy('jwt', 'jwt', {
+    key: config.get('authentication.jwt.secret'),
+    validate:  validateTokenJWT,
+  });
+
   // server.auth.default('session');
   return server.initialize();
 }).then(() => {

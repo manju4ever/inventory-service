@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "NODE_ENV=development npx nodemon --exec babel-node index.js",
+    "start": "npx nodemon --exec babel-node index.js",
     "deploy": "babel-node index.js",
     "restart": "git pull && npm i && npm run build && npm run deploy:prod",
     "restart:quick": "git pull && npm run buid && npm run deploy:prod"
@@ -30,7 +30,9 @@
     "bluebird": "^3.5.1",
     "bunyan": "^1.8.12",
     "config": "^1.30.0",
+    "dotenv": "^8.1.0",
     "hapi": "^18.1.0",
+    "hapi-auth-jwt2": "^8.7.0",
     "hapi-swagger": "^10.1.2",
     "mongodb": "^3.0.4",
     "redis": "^2.8.0",
