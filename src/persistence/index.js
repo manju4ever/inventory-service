@@ -6,7 +6,7 @@ promisifyAll(Datastore.prototype);
 promisifyAll(Cursor.prototype);
 
 export const products = new Datastore({
-    filename: './products.db',
+    filename: './db/products.db',
     autoload: true,
 });
 
