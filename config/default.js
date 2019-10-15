@@ -28,5 +28,8 @@ module.exports = {
         "jwt": {
             secret: "SneakyPeeky1234#", // maintain absolute secrecy on this
         },
+        "cookie": {
+            password: "980das9809d8asd098dsa098dsadsa09asd8089ads",
+        }
     },
 };

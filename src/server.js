@@ -82,12 +82,12 @@ server.register([
   }
 ]).then(() => {
   /**
-    Initialize server - Make sure plugins, caches and other things
+    Initialize server - Make sure plugins, caches, auth and other things
     are ready before listening to requests
   */
   server.auth.strategy('session', 'cookie', {
     cookie: {
-      password: '980das9809d8asd098dsa098dsadsa09asd8089ads',
+      password: config.get('authentication.cookie.password'),
       isSecure: false,
       isSameSite: 'Lax',
     },
@@ -102,7 +102,10 @@ server.register([
   // server.auth.default('session');
   return server.initialize();
 }).then(() => {
+
+  // Register All Routes
   Routes.forEach(route => server.route(route));
+  
   return server.start();
 }).then(() => {
 
