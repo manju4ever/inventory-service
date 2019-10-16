@@ -25,7 +25,10 @@ export default [
           tags: ['api', 'products'],   
           validate: {
               payload: Product,
-          }
+              params: {
+                product_id: Joi.string().max(8).required()
+              }
+          },
       },
       handler: ProductsController.updateProduct,
     },
@@ -33,9 +36,9 @@ export default [
       path: '/products',
       method: 'GET',
       config: {
-          tags: ['api', 'products'],
-          description: 'Get all products in the inventory',
-          tags: ['api', 'products'],
+        description: 'Get all products in the inventory',
+        tags: ['api', 'products'],
+        auth: 'jwt'
       },
       handler: ProductsController.getAllProducts,
     },

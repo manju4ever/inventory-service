@@ -7,7 +7,9 @@ export const validateCookie = (request, h) => {
         }
 };
     
-export const validateTokenJWT =  async (decoded, request, h) => { valid: true };
+export const validateTokenJWT =  async (decoded, request, h) => {
+  return { isValid: true };
+}
 
 export default {
     validateCookie,

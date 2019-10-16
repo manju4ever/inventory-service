@@ -8,7 +8,8 @@ module.exports = {
             "routes": {
                 "cors": {
                     "origin": ["*"],
-                    "headers": ["Authorization", "Content-Type", "If-None-Match", "x-requested-with", "x-forwarded-for"],
+                    "headers": ["Authorization", "Content-Type", "If-None-Match", 
+                                "x-requested-with", "x-forwarded-for"],
                     "credentials": true
                 }
             }
