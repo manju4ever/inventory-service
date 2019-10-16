@@ -15,8 +15,8 @@
     `$ npm i`
 
 2. Run
-    `$npm start`
+    `$ npm start`
 
 ### Production Usage
 
- - Run `$npm run deploy`
+ - Run `$ npm run deploy`
