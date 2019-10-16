@@ -1,5 +1,9 @@
 ## :ledger: A Simple Inventory Management Service
 
+### What does this do ?
+
+It gives you a simple REST endpoints to add, modify, list and remove products from the inventory.
+
 ### Notable Integrations / Features
   - :heavy_check_mark: Hapi.js
   - :heavy_check_mark: SwaggerUI
