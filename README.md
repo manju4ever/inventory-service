@@ -14,10 +14,15 @@
 
     `$ npm i`
 
-2. Run
+2. Run (runs in watch mode)
 
     `$ npm start`
 
 ### Production Usage
+1. Clone the repository and install all the dependencies
 
- - Run `$ npm run deploy`
+    `$ npm i`
+    
+ 2. Run 
+ 
+    `$ npm run deploy`
