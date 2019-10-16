@@ -10,11 +10,12 @@
 
 
 ### Development Usage
-1. Clone the repository and run 
+1. Clone the repository and install all the dependencies
 
     `$ npm i`
 
 2. Run
+
     `$ npm start`
 
 ### Production Usage
