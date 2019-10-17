@@ -9,7 +9,7 @@ It gives you simple REST endpoints to add, modify, list and remove products from
   - :heavy_check_mark: SwaggerUI
   - :heavy_check_mark: NeDB - Ligtweight NoSQL db on the filesystem (alternative to SQLite)
   - :heavy_check_mark: JWT Authentication for protected routes
-  - :construction: GrahphQL Endpoint to query the inventor
+  - :construction: GrahphQL Endpoint to query the inventory
   - :construction: Complete Test Spec for the API
   - :construction: Caching
 
