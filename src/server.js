@@ -11,6 +11,10 @@ import { MongoClient, Server as MongoServer } from 'mongodb';
 import Redis from 'redis';
 import bluebird from 'bluebird';
 
+// New one - GraphQL
+import Graphi from 'graphi';
+
+
 import logger from '~/utils/logger';
 import Routes from '~/routes';
 import HapiDocsOptions from '~/utils/HapiDocsOptions';
@@ -79,6 +83,12 @@ server.register([
     options: HapiSwaggerOptions,
   }, {
     plugin: HapiJWTAuth,
+  }, {
+    plugin: Graphi,
+    options: {
+      schema: {},
+      resolvers: {},
+    }
   }
 ]).then(() => {
   /**
