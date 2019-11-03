@@ -11,7 +11,7 @@ It gives you simple REST endpoints to add, modify, list and remove products from
   - :heavy_check_mark: JWT Authentication for protected routes
   - :construction: GrahphQL Endpoint to query the inventory
   - :construction: Complete Test Spec for the API
-  - :construction: Caching
+  - :construction: Server Side Caching
 
 
 ### Development Usage
