@@ -10,7 +10,7 @@
     "build": "npm run clean:build && npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist/src && cp index.js dist/",
     "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files index.js ./src --out-dir functions && cp -r config/ functions/config",
     "serve": "git pull && npm i && npm run build && npm run deploy",
-    "restart:quick": "git pull && npm run buid && npm run deploy"
+    "restart:quick": "git pull && npm run build && npm run deploy"
   },
   "repository": {
     "type": "git",
