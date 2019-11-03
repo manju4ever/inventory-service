@@ -3,7 +3,7 @@ module.exports = {
     name: 'inventory-service',
     description: 'A simple inventory service',
     connection: {
-      host: process.env.HOST || 'localhost',
+      host: process.env.HOST || '0.0.0.0',
       port: process.env.HOST || '9000',
       routes: {
         cors: {
