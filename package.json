@@ -7,7 +7,7 @@
     "start": "npx nodemon --exec babel-node index.js",
     "deploy": "npx pm2 kill && npx pm2 start -i 2 dist/index.js",
     "clean:build": "rm -rf dist",
-    "build:": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist",
+    "build": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist",
     "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir functions && cp -r config/ functions/config",
     "restart": "git pull && npm i && npm run build && npm run deploy",
     "restart:quick": "git pull && npm run buid && npm run deploy"
@@ -59,6 +59,7 @@
     "eslint-plugin-import": "^2.11.0",
     "jest": "^24.1.0",
     "marked": "^0.7.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "pm2": "^4.1.2"
   }
 }
