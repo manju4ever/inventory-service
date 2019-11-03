@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npx nodemon --exec babel-node index.js",
-    "deploy": "babel-node index.js",
+    "deploy": "npx pm2 kill && npx pm2 start -i 2 dist/index.js",
     "clean:build": "rm -rf dist",
     "build:": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist",
     "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir functions && cp -r config/ functions/config",
