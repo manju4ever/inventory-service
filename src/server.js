@@ -42,25 +42,25 @@ server.ext([
     type: 'onPreStart',
     method: async (server) => {
       try {
-        if((getEnvValue('ENABLE_MONGO')) === 'yes') {
-            const mongoConf = config.get('db.mongo');
-            const mongoDb = await MongoClient.connect(new MongoServer(
-                mongoConf.host,
-                mongoConf.port,
-                mongoConf.options || {},
-            ));
-            server.decorate('request', 'getMongo', () => {
-              // Refer - https://github.com/mongodb/node-mongodb-native/blob/3.0.0/CHANGES_3.0.0.md
-              return mongoDb.db(config.get("db.mongodb.database"));
+        if ((getEnvValue('ENABLE_MONGO')) === 'yes') {
+          const mongoConf = config.get('db.mongo');
+          const mongoDb = await MongoClient.connect(new MongoServer(
+            mongoConf.host,
+            mongoConf.port,
+            mongoConf.options || {},
+          ));
+          server.decorate('request', 'getMongo', () => {
+            // Refer - https://github.com/mongodb/node-mongodb-native/blob/3.0.0/CHANGES_3.0.0.md
+            return mongoDb.db(config.get("db.mongodb.database"));
           });
         }
-        if((getEnvValue('ENABLE_REDIS')) === 'yes') {
-            const redisConf = config.get('db.redis');
-            const redisClient = await Redis.createClient(redisConf);
-            server.decorate('request', 'getRedis', () => {
-                return redisClient;
-            });
-         }
+        if ((getEnvValue('ENABLE_REDIS')) === 'yes') {
+          const redisConf = config.get('db.redis');
+          const redisClient = await Redis.createClient(redisConf);
+          server.decorate('request', 'getRedis', () => {
+            return redisClient;
+          });
+        }
         return server;
       } catch (err) {
         logger.error('[Server] Connection to Mongo Instance Failed !');
@@ -106,16 +106,16 @@ server.register([
 
   server.auth.strategy('jwt', 'jwt', {
     key: config.get('authentication.jwt.secret'),
-    validate:  validateTokenJWT,
+    validate: validateTokenJWT,
   });
 
-  // server.auth.default('session');
+  // server.auth.default('jwt');
   return server.initialize();
 }).then(() => {
 
   // Register All Routes
   Routes.forEach(route => server.route(route));
-  
+
   return server.start();
 }).then(() => {
 
@@ -126,3 +126,5 @@ server.register([
   logger.error(err);
   process.exit(255);
 });
+
+export default server;

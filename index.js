@@ -1,5 +1,5 @@
 require('dotenv');
-require('./src/server');
+const server = require('./src/server');
 
 // Catch Unhandled Rejections Globally
 process.on('unhandledRejection', (reason, p) => {

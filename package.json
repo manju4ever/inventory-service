@@ -6,6 +6,9 @@
   "scripts": {
     "start": "npx nodemon --exec babel-node index.js",
     "deploy": "babel-node index.js",
+    "clean:build": "rm -rf dist",
+    "build:": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist",
+    "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir functions && cp -r config/ functions/config",
     "restart": "git pull && npm i && npm run build && npm run deploy",
     "restart:quick": "git pull && npm run buid && npm run deploy"
   },
@@ -32,6 +35,8 @@
     "config": "^1.30.0",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^8.1.0",
+    "firebase-admin": "^8.7.0",
+    "firebase-functions": "^3.3.0",
     "graphi": "^8.1.0",
     "hapi": "^18.1.0",
     "hapi-auth-jwt2": "^8.7.0",
@@ -45,7 +50,9 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.6.3",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",

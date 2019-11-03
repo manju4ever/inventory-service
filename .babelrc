@@ -1,5 +1,7 @@
 {
-  "presets": ["@babel/preset-env"],
+  "presets": [
+    "@babel/preset-env"
+  ],
   "plugins": [
     [
       "module-resolver",
@@ -8,6 +10,18 @@
           "~": "./src"
         }
       }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
     ]
   ],
+  "ignore": [
+    "node_modules",
+    ".history",
+    ".vscode",
+    "dist"
+  ]
 }
