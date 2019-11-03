@@ -9,7 +9,7 @@
     "clean:build": "rm -rf dist",
     "build": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist",
     "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir functions && cp -r config/ functions/config",
-    "restart": "git pull && npm i && npm run build && npm run deploy",
+    "serve": "git pull && npm i && npm run build && npm run deploy",
     "restart:quick": "git pull && npm run buid && npm run deploy"
   },
   "repository": {
