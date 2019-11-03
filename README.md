@@ -27,11 +27,7 @@ It gives you simple REST endpoints to add, modify, list and remove products from
 
 
 ### Production Usage
-1. Clone the repository and install all the dependencies
-
-    `$ npm i`
-    
- 2. Run 
- 
-    `$ npm run deploy`
+1. Clone the repository 
+   - Run 
+       `$ npm run serve`
     
