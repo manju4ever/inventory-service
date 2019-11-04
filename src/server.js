@@ -109,7 +109,7 @@ server.register([
     validate: validateTokenJWT,
   });
 
-  // server.auth.default('jwt');
+  server.auth.default('jwt');
   return server.initialize();
 }).then(() => {
 

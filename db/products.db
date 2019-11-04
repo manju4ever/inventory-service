@@ -1,2 +1,2 @@
-{"$$indexCreated":{"fieldName":"title","unique":true,"sparse":true}}
 {"title":"string","brand":"string","price":120,"sale_price":120,"stock":100,"image_url":"https://source.unsplash.com/100x100/?product","imageSrcList":["https://source.unsplash.com/1366x768/?product","https://source.unsplash.com/1800x1000/?product"],"_id":"CXV54zJbe08dyGsv"}
+{"$$indexCreated":{"fieldName":"title","unique":true,"sparse":true}}
