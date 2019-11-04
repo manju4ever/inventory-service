@@ -33,3 +33,29 @@ It gives you simple REST endpoints to add, modify, list and remove products from
    - Run 
        `$npm run serve`
     
+
+### Project Structure
+```bash
+src
+├── controllers
+│   ├── AccountsController.js
+│   └── ProductsController.js
+├── persistence
+│   └── index.js
+├── routes
+│   ├── accounts-route.js
+│   ├── index.js
+│   └── products-route.js
+├── schemas
+│   ├── Product.js
+│   ├── User.js
+│   └── index.js
+├── security
+│   └── index.js
+├── server.js
+└── utils
+    ├── HapiDocsOptions.js
+    ├── HapiSwaggerOptions.js
+    ├── index.js
+    └── logger.js
+ ```
