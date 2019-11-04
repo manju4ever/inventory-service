@@ -25,7 +25,7 @@ It gives you simple REST endpoints to add, modify, list and remove products from
 
     `$ npm start`
 
-3. :book: Swagger Documentation URL: http://localhost:8080/documentation
+3. :book: Swagger Documentation URL: http://localhost:9090/documentation
 
 
 ### Production Usage
