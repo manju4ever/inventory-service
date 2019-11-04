@@ -8,5 +8,5 @@ npm-debug.log
 functions
 .firebase*
 firebase*
-db
+db/
 
