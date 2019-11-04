@@ -23,10 +23,10 @@ export default {
         try {
             const { email, password } = loginInfo;
             const userInfo = await iam.findOne({ email }).execAsync();
-
+            console.log(userInfo);
             if (!userInfo)
                 return h.response({ internalCode: '401.1', message: 'User not found !' }).code(401);
-            if (!(userInfo.password === Crypto.SHA256(password).toString()))
+            if (!(userInfo.password === await Crypto.SHA256(password).toString()))
                 return h.response({ internalCode: '401.2', message: 'Bad login info !' }).code(401);
 
             return h.response()
