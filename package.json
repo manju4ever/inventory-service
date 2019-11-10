@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npx nodemon --exec babel-node index.js",
-    "deploy": "npx pm2 kill && npx pm2 start -i 2 dist/index.js",
+    "deploy": "npx forever stopall && npx forever start dist/index.js",
     "clean:build": "rm -rf dist && mkdir dist",
     "build": "npm run clean:build && npx -p @babel/cli -p @babel/core babel --copy-files ./src --out-dir dist/src && cp index.js dist/",
     "build:serverless": "npx -p @babel/cli -p @babel/core babel --copy-files index.js ./src --out-dir functions && cp -r config/ functions/config",
@@ -57,6 +57,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
+    "forever": "^1.0.0",
     "jest": "^24.1.0",
     "marked": "^0.7.0",
     "nodemon": "^1.18.9",
