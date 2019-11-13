@@ -1,5 +1,3 @@
-DEMO URL: http://api.apphelpify.com:9090/documentation
-
 ## :ledger: A Simple Inventory Management Service
 
 ### What does this do ?
