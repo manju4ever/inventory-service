@@ -12,7 +12,7 @@ module.exports = {
   },
   authentication: {
     jwt: {
-      secret: 'SneakyPeeky1234#', // maintain absolute secrecy on this
+      secret: process.env.JWT_SECRET || 'SneakyPeeky1234#', // maintain absolute secrecy on this
       options: {
         verifyOptions: {
           algorithms: ['HS256'],
